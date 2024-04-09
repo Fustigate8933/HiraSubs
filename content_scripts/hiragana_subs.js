@@ -7,6 +7,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
 
           const fetchData = async () => {
             try {
+
               const response = await fetch('https://labs.goo.ne.jp/api/hiragana', {
                 method: 'POST',
                 headers: {
@@ -18,16 +19,11 @@ const observer = new MutationObserver((mutationsList, observer) => {
                   output_type: 'hiragana'
                 })
               });
-
               const data = await response.json();
-
               console.log(data.converted);
+
               const captionContainer = document.createElement('div');
               captionContainer.id = 'captionContainer';
-              captionContainer.style.position = 'absolute';
-              captionContainer.style.top = '0'; // Align to the top of the parent container
-              captionContainer.style.left = '50%'; // Center horizontally
-              captionContainer.style.transform = 'translateX(-50%)'; // Center horizontally
               captionContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
               captionContainer.style.color = 'white';
               captionContainer.style.padding = '5px';
@@ -35,8 +31,6 @@ const observer = new MutationObserver((mutationsList, observer) => {
               captionContainer.style.fontSize = '15px';
               node.parentNode.insertBefore(captionContainer, node);
               captionContainer.innerText = data.converted;
-
-              node.style.marginTop = '60px'; // Adjust this value according to the height of the new caption container
             } catch (error) {
               console.error(error);
               const captionContainer = document.createElement('div');
@@ -53,8 +47,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
               node.parentNode.insertBefore(captionContainer, node);
               captionContainer.innerText = "An error has occurred";
 
-              // Adjust margin-bottom of the original caption container
-              node.style.marginBottom = '40px'; // Adjust this value according to the height of the new caption container
+              node.style.marginBottom = '40px'; // Adjust this value according to the height of the new caption containe
             }
           };
 
