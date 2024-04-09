@@ -15,7 +15,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*", "*://*.mozilla.org/*", "*://www.youtube.com/*", "*://youtube.com/*"],
-      "js": ["lib/kuroshiro.min.js", "lib/wanakana.min.js", "content_scripts/hiragana_subs.js"]
+      "js": ["content_scripts/hiragana_subs.js"]
     }
   ]
 }
