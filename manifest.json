@@ -5,11 +5,11 @@
   "description": "Adds pure hiragana YouTube captions for Japanese YouTube videos for those learning Japanese",
   "homepage_url": "https://github.com/Fustigate8933/HiraSubs",
   "icons": {
-    "48": "icons/moai48.png"
+    "48": "icons/fan48.png"
   },
   "permissions": ["*://*/*", "identity"],
   "browser_action": {
-    "default_icon": "icons/moai32.png",
+    "default_icon": "icons/fan32.png",
     "default_title": "HiraSubs"
   },
   "content_scripts": [
